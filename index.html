@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>WEB BUG DANZZ KILLER</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+body{
+  margin:0;
+  background: linear-gradient(135deg,#000,#0f0f0f,#12001f);
+  color:white;
+  overflow:hidden;
+}
+.page{
+  display:none;
+  min-height:100vh;
+  padding:20px;
+  animation: fade .6s ease;
+}
+@keyframes fade{
+  from{opacity:0;transform:scale(.95)}
+  to{opacity:1;transform:scale(1)}
+}
+.show{display:block}
+
+.center{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+img{
+  width:220px;
+  border-radius:20px;
+  box-shadow:0 0 25px #b100ff;
+  margin-bottom:20px;
+}
+button{
+  padding:14px 35px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#ff00ff,#7a00ff);
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 0 15px #ff00ff;
+  transition:.3s;
+}
+button:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 30px #ff00ff;
+}
+input,select{
+  width:100%;
+  max-width:320px;
+  padding:12px;
+  border-radius:12px;
+  border:none;
+  margin:10px 0;
+  outline:none;
+}
+.status{
+  color:#00ff6a;
+  font-weight:bold;
+  margin-top:10px;
+  text-shadow:0 0 10px #00ff6a;
+}
+.footer{
+  position:fixed;
+  bottom:10px;
+  width:100%;
+  text-align:center;
+  font-size:13px;
+  opacity:.7;
+}
+.process{
+  margin-top:15px;
+  font-size:14px;
+  color:#ff5cff;
+  animation: blink 1s infinite;
+}
+@keyframes blink{
+  0%{opacity:1}
+  50%{opacity:.3}
+  100%{opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HALAMAN LOGIN -->
+<div id="login" class="page show center">
+  <h2>🔥 WEB BUG DANZZ KILLER 🔥</h2>
+  <img src="img/file_0000000099f471fd8839fcbf4ef2c680.png" alt="Custom Image 1">
+  <input id="user" placeholder="Username">
+  <input id="pass" type="password" placeholder="Password">
+  <button onclick="login()">🔐 LOGIN</button>
+</div>
+
+<!-- HALAMAN BUG -->
+<div id="bug" class="page center">
+  <h2>⚠ BUG PANEL ⚠</h2>
+  <img src="img/file_0000000099f471fd8839fcbf4ef2c680.png" alt="Custom Image 2">
+  <input placeholder="Masukkan nomor target (+62xxx)">
+  <select id="bugType">
+    <option>Force Close</option>
+    <option>Crash UI</option>
+    <option>Delay Invisible</option>
+    <option>Freeze Device</option>
+    <option>Lock Device</option>
+  </select>
+  <button onclick="sendBug()">🚀 SEND BUG</button>
+  <div class="status">• STATUS: ONLINE</div>
+  <div id="process" class="process"></div>
+</div>
+
+<div class="footer">Developer @Mas Danzz</div>
+
+<script>
+function login(){
+  const u=document.getElementById("user").value;
+  const p=document.getElementById("pass").value;
+  if(u==="member" && p==="VIPONLY205"){
+    document.getElementById("login").classList.remove("show");
+    document.getElementById("bug").classList.add("show");
+  }else{
+    alert("❌ LOGIN GAGAL");
+  }
+}
+
+function sendBug(){
+  const bug=document.getElementById("bugType").value;
+  const proc=document.getElementById("process");
+  proc.innerHTML="⏳ Processing "+bug+" ...";
+  setTimeout(()=>{
+    proc.innerHTML="✅ BUG SENT SUCCESS ";
+  },2000);
+}
+</script>
+
+</body>
+</html>
