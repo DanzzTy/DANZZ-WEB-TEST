@@ -140,8 +140,8 @@ button:active{transform:scale(.97)}
     <div class="label">Select Bug</div>
     <select>
       <option>CRASH UI</option>
-      <option>FREEZE SCREEN</option>
-      <option>DELAY VISUAL</option>
+      <option>FREEZE DEVICE</option>
+      <option>FORCE CLOSE</option>
     </select>
 
     <button id="sendBtn">▶ SEND BUG</button>
@@ -149,7 +149,7 @@ button:active{transform:scale(.97)}
     <div class="log" id="log"></div>
   </div>
 
-  <div class="footer">Demo Simulation • No Real Attack</div>
+  <div class="footer">Developer • @Danzz gantenk</div>
 </div>
 
 <script>
@@ -162,7 +162,7 @@ btn.onclick = () => {
   setTimeout(()=>log.innerHTML="📡 Sending payload...",800);
   setTimeout(()=>log.innerHTML="⚙ Processing...",1600);
   setTimeout(()=>{
-    log.innerHTML="✅ Simulation Success (DEMO)";
+    log.innerHTML="✅ Success send bug";
     btn.classList.remove("pulse");
   },2400);
 };
